@@ -1,13 +1,34 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Senate Bills-->
+        <scene sceneID="hwZ-k3-Vm9">
+            <objects>
+                <viewController id="qji-Xn-s6l" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wXp-fU-DAH"/>
+                        <viewControllerLayoutGuide type="bottom" id="yX9-mU-uz0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aIq-yu-UXC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Senate Bills" id="Yg8-00-0Lv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5eq-qd-2mY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-684" y="879"/>
+        </scene>
+        <!--Senate Members-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -16,38 +37,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="221" y="279" width="157.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members of the United States Senate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob2-8W-6ib">
+                                <rect key="frame" x="157" y="163" width="287" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="203" y="329" width="194.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlP-YU-wMA">
+                                <rect key="frame" x="247" y="454" width="107" height="30"/>
+                                <state key="normal" title="Show Members"/>
+                                <connections>
+                                    <segue destination="oO6-hP-BFE" kind="presentation" identifier="showSenateMembers" id="ZsJ-GM-qtz"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n8A-rg-F8O">
+                                <rect key="frame" x="138" y="416" width="324" height="31"/>
+                            </slider>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJy-ko-cCx">
+                                <rect key="frame" x="140" y="192" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="Edj-4v-1G1"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="Oo2-H5-0Vi"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="ob2-8W-6ib" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="3Em-U5-5sI"/>
+                            <constraint firstItem="FlP-YU-wMA" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="A4Y-ef-0f0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n8A-rg-F8O" secondAttribute="trailing" constant="120" id="C7n-RR-kjB"/>
+                            <constraint firstItem="FlP-YU-wMA" firstAttribute="top" secondItem="n8A-rg-F8O" secondAttribute="bottom" constant="8" id="Jqe-0Z-PQF"/>
+                            <constraint firstItem="n8A-rg-F8O" firstAttribute="top" secondItem="RJy-ko-cCx" secondAttribute="bottom" constant="8" id="Tbl-cr-uow"/>
+                            <constraint firstItem="RJy-ko-cCx" firstAttribute="top" secondItem="ob2-8W-6ib" secondAttribute="bottom" constant="8" id="bPf-1g-prN"/>
+                            <constraint firstItem="n8A-rg-F8O" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="120" id="bwm-Xa-MdJ"/>
+                            <constraint firstItem="ob2-8W-6ib" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="c9d-bL-VZV"/>
+                            <constraint firstItem="RJy-ko-cCx" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="eSd-yP-SqJ"/>
+                            <constraint firstItem="RJy-ko-cCx" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="hUX-s5-utX"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="c9d-bL-VZV"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="eSd-yP-SqJ"/>
+                                <include reference="c9d-bL-VZV"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Senate Members" image="first" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--Senate Member View Controller-->
+        <scene sceneID="nCC-40-EC6">
+            <objects>
+                <viewController id="oO6-hP-BFE" customClass="SenateMemberViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LCB-vf-i8O"/>
+                        <viewControllerLayoutGuide type="bottom" id="GNR-L3-vvg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fdN-3t-pTv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtU-pU-Yim">
+                                <rect key="frame" x="546" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="oMj-Ti-v0k" kind="unwind" unwindAction="unwindSenateMemberView:" id="Yte-b0-0xf"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rXG-xO-JF7">
+                                <rect key="frame" x="0.0" y="20" width="600" height="522"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oO6-hP-BFE" id="TAS-2V-UKd"/>
+                                    <outlet property="delegate" destination="oO6-hP-BFE" id="zey-OL-OI4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HtU-pU-Yim" firstAttribute="top" secondItem="rXG-xO-JF7" secondAttribute="bottom" constant="8" id="7gw-q9-F9A"/>
+                            <constraint firstAttribute="trailing" secondItem="rXG-xO-JF7" secondAttribute="trailing" id="G3l-0d-5r5"/>
+                            <constraint firstItem="rXG-xO-JF7" firstAttribute="top" secondItem="fdN-3t-pTv" secondAttribute="topMargin" constant="20" id="TJ9-7L-UfM"/>
+                            <constraint firstItem="GNR-L3-vvg" firstAttribute="top" secondItem="HtU-pU-Yim" secondAttribute="bottom" constant="20" id="TcQ-vu-GAd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HtU-pU-Yim" secondAttribute="trailing" id="t8L-xI-U5N"/>
+                            <constraint firstItem="rXG-xO-JF7" firstAttribute="leading" secondItem="fdN-3t-pTv" secondAttribute="leading" id="tJO-no-7mA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="rXG-xO-JF7" id="OB1-yQ-hE3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3EF-SI-P8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oMj-Ti-v0k" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1416" y="-320"/>
+        </scene>
+        <!--House Members-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -56,33 +151,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epa-wv-WNu">
+                                <rect key="frame" x="185" y="143" width="230" height="41"/>
+                                <string key="text">Members of the United States
+House of Representatives</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Si-Un-H72">
+                                <rect key="frame" x="247" y="416" width="107" height="30"/>
+                                <state key="normal" title="Show Members"/>
+                                <connections>
+                                    <action selector="showHouseMembers:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ANd-d1-RVL"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhe-xW-rcp">
+                                <rect key="frame" x="140" y="192" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="sD4-fV-aIb"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="ncn-Ne-PBs"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="Epa-wv-WNu" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Dym-p3-jcg"/>
+                            <constraint firstItem="0Si-Un-H72" firstAttribute="top" secondItem="uhe-xW-rcp" secondAttribute="bottom" constant="8" id="VoH-j0-Jp8"/>
+                            <constraint firstItem="uhe-xW-rcp" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="bxv-Td-2kD"/>
+                            <constraint firstItem="uhe-xW-rcp" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="cd5-B9-uRZ"/>
+                            <constraint firstItem="0Si-Un-H72" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="k0s-CU-rwk"/>
+                            <constraint firstItem="uhe-xW-rcp" firstAttribute="top" secondItem="Epa-wv-WNu" secondAttribute="bottom" constant="8" id="mov-6h-6fR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="House Members" image="second" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--House Bills-->
+        <scene sceneID="mba-gx-xtT">
+            <objects>
+                <viewController id="MqW-JZ-F6R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w8j-oD-5UD"/>
+                        <viewControllerLayoutGuide type="bottom" id="MMb-mZ-Wez"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SiB-Oa-xWb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="House Bills" id="56j-8I-ecR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N6e-Pr-kGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48" y="879"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -97,6 +222,8 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="qji-Xn-s6l" kind="relationship" relationship="viewControllers" id="lU9-NB-CJT"/>
+                        <segue destination="MqW-JZ-F6R" kind="relationship" relationship="viewControllers" id="He2-XG-iAs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
