@@ -52,8 +52,6 @@ class APIManager: NSObject {
             route += "&limit=" + String(limit)
         }
         
-        print("Route: \(route)")
-        
         makeHttpGetRequest(route, onCompletion: { json, err in onCompletion(json as JSON) })
     }
     

@@ -26,7 +26,6 @@ class HouseMemberViewController: UIViewController, UITableViewDataSource, UITabl
         
         APIManager.sharedInstance.getRepresentatives(passedData.party ?? "All", current: current, limit: passedData.limit ?? -1) { (json: JSON) in
             if let results = json["objects"].array {
-                print(results)
                 for entry in results {
                     self.items.append(CongresspersonModel(json: entry))
                 }
