@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Senate Bills-->
+        <!--Bills-->
         <scene sceneID="hwZ-k3-Vm9">
             <objects>
-                <viewController id="qji-Xn-s6l" sceneMemberID="viewController">
+                <viewController id="qji-Xn-s6l" customClass="ThirdViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wXp-fU-DAH"/>
                         <viewControllerLayoutGuide type="bottom" id="yX9-mU-uz0"/>
@@ -17,13 +17,131 @@
                     <view key="view" contentMode="scaleToFill" id="aIq-yu-UXC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Active Bills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaI-g9-oPe">
+                                <rect key="frame" x="223" y="28" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Aa-9p-y5h">
+                                <rect key="frame" x="140" y="339" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qji-Xn-s6l" id="8yT-2E-EnD"/>
+                                    <outlet property="delegate" destination="qji-Xn-s6l" id="qY3-oX-IIe"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bills Active After:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T00-Eb-ErF">
+                                <rect key="frame" x="235" y="57" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chamber and Bill Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B37-AH-RVm">
+                                <rect key="frame" x="211.5" y="310" width="177" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdy-Pc-Wbq">
+                                <rect key="frame" x="265" y="563" width="70" height="30"/>
+                                <state key="normal" title="Show Bills"/>
+                                <connections>
+                                    <segue destination="2bx-vj-5ps" kind="presentation" identifier="showBills" id="z92-qM-AHl"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjl-aN-PIW">
+                                <rect key="frame" x="140" y="86" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="220863600.40437698">
+                                    <!--2008-01-01 07:00:00 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-56834067604">
+                                    <!--0200-01-01 06:59:56 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateDidChange:" destination="qji-Xn-s6l" eventType="valueChanged" id="X7x-Xa-FCx"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B37-AH-RVm" firstAttribute="centerX" secondItem="aIq-yu-UXC" secondAttribute="centerX" id="DsP-TH-qMs"/>
+                            <constraint firstItem="B37-AH-RVm" firstAttribute="top" secondItem="kjl-aN-PIW" secondAttribute="bottom" constant="8" id="GNA-X0-1EC"/>
+                            <constraint firstItem="kjl-aN-PIW" firstAttribute="top" secondItem="T00-Eb-ErF" secondAttribute="bottom" constant="8" id="ORc-O6-DnA"/>
+                            <constraint firstItem="YaI-g9-oPe" firstAttribute="centerX" secondItem="aIq-yu-UXC" secondAttribute="centerX" id="Si9-qA-8xe"/>
+                            <constraint firstItem="kjl-aN-PIW" firstAttribute="centerX" secondItem="aIq-yu-UXC" secondAttribute="centerX" id="V3q-AS-9sP"/>
+                            <constraint firstItem="Tdy-Pc-Wbq" firstAttribute="top" secondItem="8Aa-9p-y5h" secondAttribute="bottom" constant="8" id="WHL-QJ-OpY"/>
+                            <constraint firstItem="8Aa-9p-y5h" firstAttribute="top" secondItem="B37-AH-RVm" secondAttribute="bottom" constant="8" id="Z5p-pc-YU2"/>
+                            <constraint firstItem="T00-Eb-ErF" firstAttribute="top" secondItem="YaI-g9-oPe" secondAttribute="bottom" constant="8" id="btD-cS-yzk"/>
+                            <constraint firstItem="Tdy-Pc-Wbq" firstAttribute="centerX" secondItem="aIq-yu-UXC" secondAttribute="centerX" id="c6W-Er-Z8f"/>
+                            <constraint firstItem="8Aa-9p-y5h" firstAttribute="centerX" secondItem="aIq-yu-UXC" secondAttribute="centerX" id="esV-hp-UVg"/>
+                            <constraint firstItem="T00-Eb-ErF" firstAttribute="centerX" secondItem="aIq-yu-UXC" secondAttribute="centerX" id="q1J-cf-WXj"/>
+                            <constraint firstItem="YaI-g9-oPe" firstAttribute="top" secondItem="wXp-fU-DAH" secondAttribute="bottom" constant="8" id="z5j-bP-JgT"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Senate Bills" id="Yg8-00-0Lv"/>
+                    <tabBarItem key="tabBarItem" title="Bills" image="second" id="Yg8-00-0Lv"/>
+                    <connections>
+                        <outlet property="billTypePicker" destination="8Aa-9p-y5h" id="Ovd-9U-jaN"/>
+                        <outlet property="datePicker" destination="kjl-aN-PIW" id="IRe-Bu-tSK"/>
+                        <outlet property="showBills" destination="Tdy-Pc-Wbq" id="UJ6-6D-5FJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eq-qd-2mY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-684" y="879"/>
+        </scene>
+        <!--Bill View Controller-->
+        <scene sceneID="rS1-ZT-yJ1">
+            <objects>
+                <viewController id="2bx-vj-5ps" customClass="BillViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lfl-sR-hAz"/>
+                        <viewControllerLayoutGuide type="bottom" id="gef-v4-HaG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0L2-cr-BIF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbp-rR-kUh">
+                                <rect key="frame" x="546" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="6O1-7S-VOQ" kind="unwind" unwindAction="unwrapSegue:" id="oj7-Ep-GIK"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="snF-v2-0Fa">
+                                <rect key="frame" x="0.0" y="28" width="600" height="514"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2bx-vj-5ps" id="X3Y-OO-ps7"/>
+                                    <outlet property="delegate" destination="2bx-vj-5ps" id="t4n-Hg-z2i"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gef-v4-HaG" firstAttribute="top" secondItem="pbp-rR-kUh" secondAttribute="bottom" constant="20" id="JW3-g1-aah"/>
+                            <constraint firstItem="snF-v2-0Fa" firstAttribute="leading" secondItem="0L2-cr-BIF" secondAttribute="leading" id="M3f-nV-9NV"/>
+                            <constraint firstItem="snF-v2-0Fa" firstAttribute="top" secondItem="lfl-sR-hAz" secondAttribute="bottom" constant="8" id="Te9-eQ-0Xz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pbp-rR-kUh" secondAttribute="trailing" id="hGB-j1-hC5"/>
+                            <constraint firstAttribute="trailing" secondItem="snF-v2-0Fa" secondAttribute="trailing" id="wQO-MP-itb"/>
+                            <constraint firstItem="snF-v2-0Fa" firstAttribute="centerX" secondItem="0L2-cr-BIF" secondAttribute="centerX" id="zPi-ou-3Xj"/>
+                            <constraint firstItem="pbp-rR-kUh" firstAttribute="top" secondItem="snF-v2-0Fa" secondAttribute="bottom" constant="8" id="zZr-X5-uMW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="zPi-ou-3Xj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="snF-v2-0Fa" id="R2s-7Z-iok"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cc-bS-uS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6O1-7S-VOQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-684" y="1590"/>
         </scene>
         <!--Senate Members-->
         <scene sceneID="hNz-n2-bh7">
@@ -37,12 +155,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members of the United States Senate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob2-8W-6ib">
-                                <rect key="frame" x="157" y="163" width="287" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlP-YU-wMA">
                                 <rect key="frame" x="247" y="454" width="107" height="30"/>
                                 <state key="normal" title="Show Members"/>
@@ -50,8 +162,11 @@
                                     <segue destination="oO6-hP-BFE" kind="presentation" identifier="showSenateMembers" id="ZsJ-GM-qtz"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n8A-rg-F8O">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="n8A-rg-F8O">
                                 <rect key="frame" x="138" y="416" width="324" height="31"/>
+                                <connections>
+                                    <action selector="sliderLimitDidChange:" destination="9pv-A4-QxB" eventType="valueChanged" id="sXR-2p-9iG"/>
+                                </connections>
                             </slider>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJy-ko-cCx">
                                 <rect key="frame" x="140" y="192" width="320" height="216"/>
@@ -60,16 +175,31 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="Oo2-H5-0Vi"/>
                                 </connections>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results Limit:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVO-wz-qDt">
+                                <rect key="frame" x="249" y="387" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members of the United States Senate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob2-8W-6ib">
+                                <rect key="frame" x="157" y="163" width="287" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ob2-8W-6ib" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="3Em-U5-5sI"/>
                             <constraint firstItem="FlP-YU-wMA" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="A4Y-ef-0f0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="n8A-rg-F8O" secondAttribute="trailing" constant="120" id="C7n-RR-kjB"/>
                             <constraint firstItem="FlP-YU-wMA" firstAttribute="top" secondItem="n8A-rg-F8O" secondAttribute="bottom" constant="8" id="Jqe-0Z-PQF"/>
+                            <constraint firstItem="n8A-rg-F8O" firstAttribute="width" secondItem="RJy-ko-cCx" secondAttribute="width" id="K81-jO-Jq7"/>
+                            <constraint firstItem="TVO-wz-qDt" firstAttribute="top" secondItem="RJy-ko-cCx" secondAttribute="bottom" constant="-21" id="Myx-E0-dmX"/>
                             <constraint firstItem="n8A-rg-F8O" firstAttribute="top" secondItem="RJy-ko-cCx" secondAttribute="bottom" constant="8" id="Tbl-cr-uow"/>
+                            <constraint firstItem="n8A-rg-F8O" firstAttribute="top" secondItem="TVO-wz-qDt" secondAttribute="bottom" constant="8" id="Tsd-Vx-25O"/>
+                            <constraint firstItem="TVO-wz-qDt" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Uzf-wz-hLA"/>
+                            <constraint firstItem="n8A-rg-F8O" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="V80-Kf-FzW"/>
                             <constraint firstItem="RJy-ko-cCx" firstAttribute="top" secondItem="ob2-8W-6ib" secondAttribute="bottom" constant="8" id="bPf-1g-prN"/>
-                            <constraint firstItem="n8A-rg-F8O" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="120" id="bwm-Xa-MdJ"/>
                             <constraint firstItem="ob2-8W-6ib" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="c9d-bL-VZV"/>
                             <constraint firstItem="RJy-ko-cCx" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="eSd-yP-SqJ"/>
                             <constraint firstItem="RJy-ko-cCx" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="hUX-s5-utX"/>
@@ -77,16 +207,21 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="c9d-bL-VZV"/>
+                                <exclude reference="Tbl-cr-uow"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <exclude reference="eSd-yP-SqJ"/>
                                 <include reference="c9d-bL-VZV"/>
+                                <exclude reference="eSd-yP-SqJ"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Senate Members" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="limitLabel" destination="TVO-wz-qDt" id="g22-Z3-pfI"/>
+                        <outlet property="limitSlider" destination="n8A-rg-F8O" id="mmg-dc-asr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,6 +274,53 @@
             </objects>
             <point key="canvasLocation" x="1416" y="-320"/>
         </scene>
+        <!--House Member View Controller-->
+        <scene sceneID="kHK-WC-H7F">
+            <objects>
+                <viewController id="Zmv-ra-ARb" customClass="HouseMemberViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vk5-ua-uUb"/>
+                        <viewControllerLayoutGuide type="bottom" id="TWo-Pj-4ty"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jic-GY-8hy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOz-Km-qtT">
+                                <rect key="frame" x="546" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="gpK-6H-U3D" kind="unwind" unwindAction="unwindSenateMemberView:" id="0Ms-i8-qot"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YBN-ak-a1o">
+                                <rect key="frame" x="0.0" y="20" width="600" height="522"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Zmv-ra-ARb" id="ayK-gN-8IF"/>
+                                    <outlet property="delegate" destination="Zmv-ra-ARb" id="K77-9q-bCl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YBN-ak-a1o" firstAttribute="leading" secondItem="Jic-GY-8hy" secondAttribute="leading" id="DXN-Lg-ruc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nOz-Km-qtT" secondAttribute="trailing" id="FmZ-dd-dzu"/>
+                            <constraint firstAttribute="trailing" secondItem="YBN-ak-a1o" secondAttribute="trailing" id="Hgy-sr-Sr6"/>
+                            <constraint firstItem="TWo-Pj-4ty" firstAttribute="top" secondItem="nOz-Km-qtT" secondAttribute="bottom" constant="20" id="h2U-6h-d2s"/>
+                            <constraint firstItem="nOz-Km-qtT" firstAttribute="top" secondItem="YBN-ak-a1o" secondAttribute="bottom" constant="8" id="pqX-jS-NKM"/>
+                            <constraint firstItem="YBN-ak-a1o" firstAttribute="top" secondItem="vk5-ua-uUb" secondAttribute="bottom" id="qmr-T2-bq9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="YBN-ak-a1o" id="PkG-rG-37V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dCO-tO-M0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gpK-6H-U3D" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1416" y="360"/>
+        </scene>
         <!--House Members-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -151,19 +333,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epa-wv-WNu">
-                                <rect key="frame" x="185" y="143" width="230" height="41"/>
-                                <string key="text">Members of the United States
-House of Representatives</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members of the United States House of Representatives" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epa-wv-WNu">
+                                <rect key="frame" x="20" y="163" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="435" minValue="1" maxValue="435" translatesAutoresizingMaskIntoConstraints="NO" id="2t9-8h-GUm">
+                                <rect key="frame" x="138" y="416" width="324" height="31"/>
+                                <connections>
+                                    <action selector="limitDidChange:" destination="8rJ-Kc-sve" eventType="valueChanged" id="pDw-Ux-whq"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results Limit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIT-W8-32a">
+                                <rect key="frame" x="249" y="387" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Si-Un-H72">
-                                <rect key="frame" x="247" y="416" width="107" height="30"/>
+                                <rect key="frame" x="247" y="454" width="107" height="30"/>
                                 <state key="normal" title="Show Members"/>
                                 <connections>
-                                    <action selector="showHouseMembers:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ANd-d1-RVL"/>
+                                    <segue destination="Zmv-ra-ARb" kind="presentation" identifier="showHouseMembers" id="J7X-zk-UFR"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhe-xW-rcp">
@@ -176,21 +368,53 @@ House of Representatives</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Epa-wv-WNu" secondAttribute="leading" id="9mP-b8-wxd"/>
                             <constraint firstItem="Epa-wv-WNu" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Dym-p3-jcg"/>
-                            <constraint firstItem="0Si-Un-H72" firstAttribute="top" secondItem="uhe-xW-rcp" secondAttribute="bottom" constant="8" id="VoH-j0-Jp8"/>
+                            <constraint firstItem="Epa-wv-WNu" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8.5" id="J31-Kb-UtM"/>
+                            <constraint firstItem="2t9-8h-GUm" firstAttribute="top" secondItem="uhe-xW-rcp" secondAttribute="bottom" constant="8" id="J68-Ti-BM0"/>
+                            <constraint firstItem="Epa-wv-WNu" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="0.5" id="JE4-eI-QkH"/>
+                            <constraint firstItem="2t9-8h-GUm" firstAttribute="width" secondItem="uhe-xW-rcp" secondAttribute="width" id="N0X-Bn-wwI"/>
+                            <constraint firstItem="2t9-8h-GUm" firstAttribute="top" secondItem="LIT-W8-32a" secondAttribute="bottom" constant="8" id="Qo9-UB-5rh"/>
+                            <constraint firstItem="2t9-8h-GUm" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Ugc-Cz-YQP"/>
+                            <constraint firstItem="LIT-W8-32a" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="aLr-z9-F5B"/>
                             <constraint firstItem="uhe-xW-rcp" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="bxv-Td-2kD"/>
-                            <constraint firstItem="uhe-xW-rcp" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="cd5-B9-uRZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Epa-wv-WNu" secondAttribute="trailing" id="ctF-Ds-yah"/>
+                            <constraint firstItem="uhe-xW-rcp" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="eKh-gc-E8b"/>
+                            <constraint firstItem="0Si-Un-H72" firstAttribute="top" secondItem="2t9-8h-GUm" secondAttribute="bottom" constant="8" id="i64-Sp-qie"/>
                             <constraint firstItem="0Si-Un-H72" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="k0s-CU-rwk"/>
                             <constraint firstItem="uhe-xW-rcp" firstAttribute="top" secondItem="Epa-wv-WNu" secondAttribute="bottom" constant="8" id="mov-6h-6fR"/>
+                            <constraint firstItem="uhe-xW-rcp" firstAttribute="top" secondItem="Epa-wv-WNu" secondAttribute="bottom" constant="8" id="qIi-4b-Qun"/>
+                            <constraint firstItem="LIT-W8-32a" firstAttribute="top" secondItem="uhe-xW-rcp" secondAttribute="bottom" constant="-21" id="vt9-bg-1XJ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="J31-Kb-UtM"/>
+                                <exclude reference="JE4-eI-QkH"/>
+                                <exclude reference="qIi-4b-Qun"/>
+                                <exclude reference="J68-Ti-BM0"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="J31-Kb-UtM"/>
+                                <exclude reference="JE4-eI-QkH"/>
+                                <exclude reference="eKh-gc-E8b"/>
+                                <exclude reference="mov-6h-6fR"/>
+                                <include reference="qIi-4b-Qun"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="House Members" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="resultsLabel" destination="LIT-W8-32a" id="8oZ-xm-IlP"/>
+                        <outlet property="resultsSlider" destination="2t9-8h-GUm" id="4tx-vQ-f3O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="750" y="367.5"/>
         </scene>
-        <!--House Bills-->
+        <!--Vetoes-->
         <scene sceneID="mba-gx-xtT">
             <objects>
                 <viewController id="MqW-JZ-F6R" sceneMemberID="viewController">
@@ -203,7 +427,7 @@ House of Representatives</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="House Bills" id="56j-8I-ecR"/>
+                    <tabBarItem key="tabBarItem" title="Vetoes" image="second" id="56j-8I-ecR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6e-Pr-kGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,8 @@
 import UIKit
 
 class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    @IBOutlet weak var resultsSlider: UISlider!
+    @IBOutlet weak var resultsLabel: UILabel!
     
     let parties = [
         "All",
@@ -21,6 +23,14 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         "Current",
         "Former"
     ]
+    
+    var selectedParty = "All"
+    var selectedStatus = "Current"
+    var limit = -1
+    
+    override func viewWillAppear(animated: Bool) {
+        resultsLabel.text = "Results Limit: " + String(Int(resultsSlider.value))
+    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2
@@ -42,19 +52,32 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
-    @IBAction func showHouseMembers(sender: UIButton) {
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedParty = self.parties[pickerView.selectedRowInComponent(0)]
+        selectedStatus = self.status[pickerView.selectedRowInComponent(1)]
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBAction func limitDidChange(sender: UISlider) {
+        limit = Int(resultsSlider.value)
+        resultsLabel.text = "Results Limit: " + String(Int(resultsSlider.value))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showHouseMembers" {
+            let vc = segue.destinationViewController as! HouseMemberViewController
+            
+            vc.passedData.party = selectedParty
+            vc.passedData.status = selectedStatus
+            vc.passedData.limit = limit
+        }
     }
-
-
+    
+    @IBAction func unwindSenateMemberView(segue: UIStoryboardSegue) {
+        if segue.identifier == "showSenateMembers" {
+            let vc = segue.sourceViewController as! SenateMemberViewController
+            
+            resultsSlider.value = Float(vc.passedData.limit!)
+        }
+    }
 }
 

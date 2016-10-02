@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>House</key>
+	<array>
+		<string>House Bill</string>
+		<string>House Resolution</string>
+		<string>House Concurrent Resolution</string>
+		<string>House Joint Resolution</string>
+	</array>
+	<key>Senate</key>
+	<array>
+		<string>Senate Bill</string>
+		<string>Senate Resolution</string>
+		<string>Senate Concurrent Resolution</string>
+		<string>Senate Joint Resolution</string>
+	</array>
+</dict>
+</plist>

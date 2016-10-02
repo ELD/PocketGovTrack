@@ -1,5 +1,5 @@
 //
-//  SenateMemberViewController.swift
+//  HouseMemberViewController.swift
 //  PocketGovTrack
 //
 //  Created by Eric Dattore on 10/1/16.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SenateMemberViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HouseMemberViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var passedData = SharedPersonData()
     var items = [CongresspersonModel]()
-
+    
     override func viewWillAppear(animated: Bool) {
         self.tableView.allowsSelection = false
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -24,8 +24,9 @@ class SenateMemberViewController: UIViewController, UITableViewDelegate, UITable
             current = false
         }
         
-        APIManager.sharedInstance.getSenators(passedData.party ?? "All", current: current, limit: passedData.limit ?? -1) { (json: JSON) in
+        APIManager.sharedInstance.getRepresentatives(passedData.party ?? "All", current: current, limit: passedData.limit ?? -1) { (json: JSON) in
             if let results = json["objects"].array {
+                print(results)
                 for entry in results {
                     self.items.append(CongresspersonModel(json: entry))
                 }

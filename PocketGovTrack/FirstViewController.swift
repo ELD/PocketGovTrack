@@ -9,6 +9,9 @@
 import UIKit
 
 class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    @IBOutlet weak var limitSlider: UISlider!
+    @IBOutlet weak var limitLabel: UILabel!
+    
     let parties: [String] = [
         "All",
         "Democrat",
@@ -23,6 +26,11 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     var selectedParty = "All"
     var selectedStatus = "Current"
+    var limit: Int = -1
+    
+    override func viewWillAppear(animated: Bool) {        
+        limitLabel.text = "Result limit: " + String(Int(limitSlider.value))
+    }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2
@@ -49,18 +57,29 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         selectedStatus = self.status[pickerView.selectedRowInComponent(1)]
     }
     
+    @IBAction func sliderLimitDidChange(sender: UISlider) {
+        self.limit = Int(limitSlider.value)
+        
+        limitLabel.text = "Result limit: " + String(Int(limitSlider.value))
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSenateMembers" {
             let vc = segue.destinationViewController as! SenateMemberViewController
             
             vc.passedData.party = selectedParty
             vc.passedData.status = selectedStatus
+            vc.passedData.limit = limit
         }
     }
     
     
     @IBAction func unwindSenateMemberView(segue: UIStoryboardSegue) {
-        // Nothing for now
+        if segue.identifier == "showSenateMembers" {
+            let vc = segue.sourceViewController as! SenateMemberViewController
+            
+            limitSlider.value = Float(vc.passedData.limit!)
+        }
     }
 }
 
