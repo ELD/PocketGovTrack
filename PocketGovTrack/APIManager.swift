@@ -98,7 +98,21 @@ class APIManager: NSObject {
     }
     
     func getVetoes(dateAfter: NSDate, onCompletion: (JSON) -> Void) {
-        // TODO: Vetoes
+        var route = billBaseRoute + "?sort=-current_status_date"
+        
+        route += "&current_status__in="
+            + "prov_kill_veto%7C"
+            + "vetoed_override_fail_second_house%7C"
+            + "vetoed_pocket%7C"
+            + "vetoed_override_fail_originating_house%7C"
+            + "vetoed_override_fail_second_senate%7C"
+            + "vetoed_override_fail_originating_senate"
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        route += "&current_status_date__gt=" + formatter.stringFromDate(dateAfter)
+        
+        makeHttpGetRequest(route, onCompletion: { json, err in onCompletion(json as JSON) })
     }
     
     private func makeHttpGetRequest(path: String, onCompletion: ServiceResponse) {

@@ -1,15 +1,16 @@
 //
-//  BillViewController.swift
+//  VetoesViewController.swift
 //  PocketGovTrack
 //
-//  Created by Eric Dattore on 10/1/16.
+//  Created by Eric Dattore on 10/2/16.
 //  Copyright © 2016 BuilDev Software. All rights reserved.
 //
 
 import UIKit
 
-class BillViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VetoesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+
     var sharedData = SharedBillData()
     var items = [BillModel]()
     
@@ -17,7 +18,7 @@ class BillViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.allowsSelection = false
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        APIManager.sharedInstance.getBills(sharedData.billType!, dateAfter: sharedData.date!, onCompletion: { (json: JSON) in
+        APIManager.sharedInstance.getVetoes(sharedData.date!, onCompletion: { (json: JSON) in
             if let results = json["objects"].array {
                 for entry in results {
                     self.items.append(BillModel(json: entry))
@@ -41,9 +42,9 @@ class BillViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "CELL")
         }
         
-        let bill = self.items[indexPath.row]
+        let veto = self.items[indexPath.row]
         
-        cell!.textLabel?.text = bill.title
+        cell!.textLabel?.text = veto.title
         return cell!
     }
 }

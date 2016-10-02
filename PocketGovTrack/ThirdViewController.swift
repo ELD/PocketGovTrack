@@ -55,7 +55,7 @@ class ThirdViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         dateAfter = datePicker.date
     }
     
-    @IBAction func unwrapSegue(segue: UIStoryboardSegue) {
+    func unwrapSegue(segue: UIStoryboardSegue) {
         // Do nothing
     }
     

@@ -14,6 +14,8 @@
 		A470E9DB1DA0CFB1005899DC /* BillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470E9DA1DA0CFB1005899DC /* BillViewController.swift */; };
 		A470E9DD1DA0CFF0005899DC /* SharedBillData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470E9DC1DA0CFF0005899DC /* SharedBillData.swift */; };
 		A470E9DF1DA0D129005899DC /* BillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470E9DE1DA0D129005899DC /* BillModel.swift */; };
+		A470E9E11DA0DC9F005899DC /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470E9E01DA0DC9F005899DC /* FourthViewController.swift */; };
+		A470E9E31DA0DCC3005899DC /* VetoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470E9E21DA0DCC3005899DC /* VetoesViewController.swift */; };
 		A4F7AEA01D9F687E0079E3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7AE9F1D9F687E0079E3F1 /* AppDelegate.swift */; };
 		A4F7AEA21D9F687E0079E3F1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7AEA11D9F687E0079E3F1 /* FirstViewController.swift */; };
 		A4F7AEA41D9F687E0079E3F1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7AEA31D9F687E0079E3F1 /* SecondViewController.swift */; };
@@ -36,6 +38,8 @@
 		A470E9DA1DA0CFB1005899DC /* BillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillViewController.swift; sourceTree = "<group>"; };
 		A470E9DC1DA0CFF0005899DC /* SharedBillData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedBillData.swift; sourceTree = "<group>"; };
 		A470E9DE1DA0D129005899DC /* BillModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
+		A470E9E01DA0DC9F005899DC /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		A470E9E21DA0DCC3005899DC /* VetoesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VetoesViewController.swift; sourceTree = "<group>"; };
 		A4F7AE9C1D9F687D0079E3F1 /* PocketGovTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketGovTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F7AE9F1D9F687E0079E3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4F7AEA11D9F687E0079E3F1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				A4F7AEB51D9F68A40079E3F1 /* UserObject.swift */,
 				A470E9DA1DA0CFB1005899DC /* BillViewController.swift */,
 				A470E9DC1DA0CFF0005899DC /* SharedBillData.swift */,
+				A470E9E01DA0DC9F005899DC /* FourthViewController.swift */,
+				A470E9E21DA0DCC3005899DC /* VetoesViewController.swift */,
 			);
 			path = PocketGovTrack;
 			sourceTree = "<group>";
@@ -191,9 +197,11 @@
 				A4F7AEBA1D9F710C0079E3F1 /* TableViewExample.swift in Sources */,
 				A470E9DD1DA0CFF0005899DC /* SharedBillData.swift in Sources */,
 				A470E9D31DA0BEA7005899DC /* ThirdViewController.swift in Sources */,
+				A470E9E11DA0DC9F005899DC /* FourthViewController.swift in Sources */,
 				A470E9D71DA0CEC4005899DC /* SharedPersonData.swift in Sources */,
 				A4F7AEA21D9F687E0079E3F1 /* FirstViewController.swift in Sources */,
 				A4F7AEB81D9F68A40079E3F1 /* UserObject.swift in Sources */,
+				A470E9E31DA0DCC3005899DC /* VetoesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
