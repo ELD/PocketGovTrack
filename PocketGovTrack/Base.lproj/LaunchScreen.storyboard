@@ -16,7 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capitol" translatesAutoresizingMaskIntoConstraints="NO" id="bQ6-pG-kAw">
+                                <rect key="frame" x="-1633" y="-700" width="3866" height="2000"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="uGovTrack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgv-qo-lDT">
+                                <rect key="frame" x="206" y="90" width="188" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="-2"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bQ6-pG-kAw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6IO-dn-ca5"/>
+                            <constraint firstItem="bQ6-pG-kAw" firstAttribute="top" secondItem="Xgv-qo-lDT" secondAttribute="bottom" constant="-840" id="QeI-AD-hNR"/>
+                            <constraint firstItem="bQ6-pG-kAw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="UNq-fc-0kq"/>
+                            <constraint firstItem="Xgv-qo-lDT" firstAttribute="centerX" secondItem="bQ6-pG-kAw" secondAttribute="centerX" id="gM5-nn-6Dt"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +43,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="capitol" width="3865" height="2000"/>
+    </resources>
 </document>

@@ -40,7 +40,7 @@
 		A470E9DE1DA0D129005899DC /* BillModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
 		A470E9E01DA0DC9F005899DC /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		A470E9E21DA0DCC3005899DC /* VetoesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VetoesViewController.swift; sourceTree = "<group>"; };
-		A4F7AE9C1D9F687D0079E3F1 /* PocketGovTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketGovTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4F7AE9C1D9F687D0079E3F1 /* uGovTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uGovTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4F7AE9F1D9F687E0079E3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4F7AEA11D9F687E0079E3F1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		A4F7AEA31D9F687E0079E3F1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		A4F7AE9D1D9F687D0079E3F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4F7AE9C1D9F687D0079E3F1 /* PocketGovTrack.app */,
+				A4F7AE9C1D9F687D0079E3F1 /* uGovTrack.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,9 +115,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A4F7AE9B1D9F687D0079E3F1 /* PocketGovTrack */ = {
+		A4F7AE9B1D9F687D0079E3F1 /* uGovTrack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4F7AEB01D9F687E0079E3F1 /* Build configuration list for PBXNativeTarget "PocketGovTrack" */;
+			buildConfigurationList = A4F7AEB01D9F687E0079E3F1 /* Build configuration list for PBXNativeTarget "uGovTrack" */;
 			buildPhases = (
 				A4F7AE981D9F687D0079E3F1 /* Sources */,
 				A4F7AE991D9F687D0079E3F1 /* Frameworks */,
@@ -127,9 +127,9 @@
 			);
 			dependencies = (
 			);
-			name = PocketGovTrack;
+			name = uGovTrack;
 			productName = PocketGovTrack;
-			productReference = A4F7AE9C1D9F687D0079E3F1 /* PocketGovTrack.app */;
+			productReference = A4F7AE9C1D9F687D0079E3F1 /* uGovTrack.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4F7AE9B1D9F687D0079E3F1 /* PocketGovTrack */,
+				A4F7AE9B1D9F687D0079E3F1 /* uGovTrack */,
 			);
 		};
 /* End PBXProject section */
@@ -344,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4F7AEB01D9F687E0079E3F1 /* Build configuration list for PBXNativeTarget "PocketGovTrack" */ = {
+		A4F7AEB01D9F687E0079E3F1 /* Build configuration list for PBXNativeTarget "uGovTrack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A4F7AEB11D9F687E0079E3F1 /* Debug */,

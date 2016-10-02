@@ -9,7 +9,7 @@
         <!--Bills-->
         <scene sceneID="hwZ-k3-Vm9">
             <objects>
-                <viewController id="qji-Xn-s6l" customClass="ThirdViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qji-Xn-s6l" customClass="ThirdViewController" customModule="uGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wXp-fU-DAH"/>
                         <viewControllerLayoutGuide type="bottom" id="yX9-mU-uz0"/>
@@ -124,7 +124,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bills" image="second" id="Yg8-00-0Lv"/>
+                    <tabBarItem key="tabBarItem" title="Bills" image="Bill" selectedImage="Bill" id="Yg8-00-0Lv"/>
                     <connections>
                         <outlet property="billTypePicker" destination="8Aa-9p-y5h" id="Ovd-9U-jaN"/>
                         <outlet property="datePicker" destination="kjl-aN-PIW" id="IRe-Bu-tSK"/>
@@ -138,7 +138,7 @@
         <!--Bill View Controller-->
         <scene sceneID="rS1-ZT-yJ1">
             <objects>
-                <viewController id="2bx-vj-5ps" customClass="BillViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2bx-vj-5ps" customClass="BillViewController" customModule="uGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lfl-sR-hAz"/>
                         <viewControllerLayoutGuide type="bottom" id="gef-v4-HaG"/>
@@ -191,7 +191,7 @@
         <!--Senate Members-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="uGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -262,7 +262,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Senate Members" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Senate Members" image="Senate" selectedImage="Senate" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="limitLabel" destination="TVO-wz-qDt" id="g22-Z3-pfI"/>
                         <outlet property="limitSlider" destination="n8A-rg-F8O" id="mmg-dc-asr"/>
@@ -275,7 +275,7 @@
         <!--Senate Member View Controller-->
         <scene sceneID="nCC-40-EC6">
             <objects>
-                <viewController id="oO6-hP-BFE" customClass="SenateMemberViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oO6-hP-BFE" customClass="SenateMemberViewController" customModule="uGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LCB-vf-i8O"/>
                         <viewControllerLayoutGuide type="bottom" id="GNR-L3-vvg"/>
@@ -322,7 +322,7 @@
         <!--House Member View Controller-->
         <scene sceneID="kHK-WC-H7F">
             <objects>
-                <viewController id="Zmv-ra-ARb" customClass="HouseMemberViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zmv-ra-ARb" customClass="HouseMemberViewController" customModule="uGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vk5-ua-uUb"/>
                         <viewControllerLayoutGuide type="bottom" id="TWo-Pj-4ty"/>
@@ -369,7 +369,7 @@
         <!--House Members-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="uGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -449,7 +449,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="House Members" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="House Members" image="House" selectedImage="House" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="resultsLabel" destination="LIT-W8-32a" id="8oZ-xm-IlP"/>
                         <outlet property="resultsSlider" destination="2t9-8h-GUm" id="4tx-vQ-f3O"/>
@@ -462,7 +462,7 @@
         <!--Vetoes-->
         <scene sceneID="mba-gx-xtT">
             <objects>
-                <viewController id="MqW-JZ-F6R" customClass="FourthViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MqW-JZ-F6R" customClass="FourthViewController" customModule="uGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w8j-oD-5UD"/>
                         <viewControllerLayoutGuide type="bottom" id="MMb-mZ-Wez"/>
@@ -524,7 +524,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Vetoes" image="second" id="56j-8I-ecR"/>
+                    <tabBarItem key="tabBarItem" title="Vetoes" image="Veto" selectedImage="Veto" id="56j-8I-ecR"/>
                     <connections>
                         <outlet property="datePicker" destination="I9e-aV-22J" id="jBK-ja-qCi"/>
                     </connections>
@@ -536,7 +536,7 @@
         <!--Vetoes View Controller-->
         <scene sceneID="CKY-pP-St1">
             <objects>
-                <viewController id="Zsn-iK-Yor" customClass="VetoesViewController" customModule="PocketGovTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zsn-iK-Yor" customClass="VetoesViewController" customModule="uGovTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Lb-6k-a3q"/>
                         <viewControllerLayoutGuide type="bottom" id="WFi-BC-jL2"/>
@@ -603,7 +603,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Bill" width="24" height="25"/>
+        <image name="House" width="23" height="12"/>
+        <image name="Senate" width="25" height="22"/>
+        <image name="Veto" width="15" height="18"/>
     </resources>
 </document>
