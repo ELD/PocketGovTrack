@@ -13,15 +13,9 @@ typealias ServiceResponse = (JSON, NSError?) -> Void
 class APIManager: NSObject {
     static let sharedInstance = APIManager()
     
-    let baseUrl = "https://www.govtrack.us/api/v2/role?current=true&role_type=senator"
     let congressBaseUrl = "https://www.govtrack.us/api/v2/role"
     let billBaseRoute = "https://www.govtrack.us/api/v2/bill"
     let imageUrl = "https://www.govtrack.us/data/photos/"
-    
-    func getRandomUser(onCompletion: (JSON) -> Void) {
-        let route = baseUrl
-        makeHttpGetRequest(route, onCompletion: { json, err in onCompletion(json as JSON) })
-    }
     
     func getSenators(party: String, current: Bool, limit: Int, onCompletion: (JSON) -> Void) {
         var route =

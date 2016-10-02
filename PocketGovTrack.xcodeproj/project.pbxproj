@@ -25,7 +25,6 @@
 		A4F7AEB61D9F68A40079E3F1 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7AEB31D9F68A40079E3F1 /* APIManager.swift */; };
 		A4F7AEB71D9F68A40079E3F1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7AEB41D9F68A40079E3F1 /* SwiftyJSON.swift */; };
 		A4F7AEB81D9F68A40079E3F1 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7AEB51D9F68A40079E3F1 /* UserObject.swift */; };
-		A4F7AEBA1D9F710C0079E3F1 /* TableViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7AEB91D9F710C0079E3F1 /* TableViewExample.swift */; };
 		A4F7AEBC1D9F71660079E3F1 /* CongresspersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7AEBB1D9F71660079E3F1 /* CongresspersonModel.swift */; };
 		A4F7AEC01D9F89C00079E3F1 /* SenateMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7AEBF1D9F89C00079E3F1 /* SenateMemberViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +50,6 @@
 		A4F7AEB31D9F68A40079E3F1 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A4F7AEB41D9F68A40079E3F1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A4F7AEB51D9F68A40079E3F1 /* UserObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
-		A4F7AEB91D9F710C0079E3F1 /* TableViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExample.swift; sourceTree = "<group>"; };
 		A4F7AEBB1D9F71660079E3F1 /* CongresspersonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongresspersonModel.swift; sourceTree = "<group>"; };
 		A4F7AEBF1D9F89C00079E3F1 /* SenateMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenateMemberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +99,6 @@
 				A4F7AEBF1D9F89C00079E3F1 /* SenateMemberViewController.swift */,
 				A470E9D61DA0CEC4005899DC /* SharedPersonData.swift */,
 				A4F7AEB41D9F68A40079E3F1 /* SwiftyJSON.swift */,
-				A4F7AEB91D9F710C0079E3F1 /* TableViewExample.swift */,
 				A470E9D21DA0BEA7005899DC /* ThirdViewController.swift */,
 				A4F7AEB51D9F68A40079E3F1 /* UserObject.swift */,
 				A470E9DA1DA0CFB1005899DC /* BillViewController.swift */,
@@ -194,7 +191,6 @@
 				A470E9DB1DA0CFB1005899DC /* BillViewController.swift in Sources */,
 				A470E9DF1DA0D129005899DC /* BillModel.swift in Sources */,
 				A4F7AEC01D9F89C00079E3F1 /* SenateMemberViewController.swift in Sources */,
-				A4F7AEBA1D9F710C0079E3F1 /* TableViewExample.swift in Sources */,
 				A470E9DD1DA0CFF0005899DC /* SharedBillData.swift in Sources */,
 				A470E9D31DA0BEA7005899DC /* ThirdViewController.swift in Sources */,
 				A470E9E11DA0DC9F005899DC /* FourthViewController.swift in Sources */,
